@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Proposal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffcccc; /* Love-themed background color */
+    }
+
+    .proposal-container {
+      text-align: center;
+      color: #ff69b4; /* Love-themed text color */
+    }
+
+    .options {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .no-hover {
+      transition: transform 0.3s ease-in-out;
+      color: #ff0000; /* Love-themed color for 'No' option */
+    }
+
+    .no-hover:hover {
+      transform: translateX(-10px); /* Move 'No' option left */
+      cursor: not-allowed; /* Change cursor to not-allowed */
+    }
+  </style>
+</head>
+<body>
+  <div class="proposal-container">
+    <h1>Do you love me?</h1>
+    <div class="options">
+      <label for="yes">
+        <input type="radio" id="yes" name="love" value="yes">
+        Yes
+      </label>
+      <label for="no" class="no-hover" onclick="return false;">
+        <input type="radio" id="no" name="love" value="no">
+        No
+      </label>
+    </div>
+  </div>
+
+  <script>
+    // Disable click functionality for the 'No' option
+    document.getElementById('no').addEventListener('click', function(event) {
+      event.stopPropagation();
+      return false;
+    });
+  </script>
+</body>
+</html>
